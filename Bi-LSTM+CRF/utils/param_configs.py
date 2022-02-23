@@ -36,12 +36,12 @@ class Configs(object):
         START_TAG = "<START>"
         STOP_TAG = "<STOP>"
         # 标签：idx
-        tag2idx = {"O": 0, "B-BANK": 1, "I-BANK": 2, "B-PRODUCT": 3, 'I-PRODUCT': 4,
+        self.tag2idx = {"O": 0, "B-BANK": 1, "I-BANK": 2, "B-PRODUCT": 3, 'I-PRODUCT': 4,
                    'B-COMMENTS_N': 5, 'I-COMMENTS_N': 6, 'B-COMMENTS_ADJ': 7,
                    'I-COMMENTS_ADJ': 8, START_TAG: 9, STOP_TAG: 10}
 
 
-        self.num_class = len(self.class_ls)
+        self.num_class = len(self.tag2idx)
         self.word2idx = None
         self.vocab_len = None  # 词表大小(训练集总的字数(字符级)） 在embedding层作为参数 后期赋值
         self.embedding_pretrained = None  # 根据config.embedding_type后期赋值  random:None  else:tensor from embedding_type
