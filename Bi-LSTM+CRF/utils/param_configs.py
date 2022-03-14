@@ -24,7 +24,7 @@ class Configs(object):
         self.hidden_size = 300  # 隐藏层维度
         self.num_layers = 1  # RNN层数
         self.bidirectional = True  # 双向 or 单向
-        self.padding_size = 100
+        self.padding_size = 30
         # self.require_improvement = 1  # 1个epoch若在dev上acc未提升则自动结束
 
 
