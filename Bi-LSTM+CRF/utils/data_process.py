@@ -42,7 +42,7 @@ class NER_Dataset(Dataset):
                 # 转tensor，加个mask(CRF所需)
                 sent_tensor = torch.tensor([self.configs.word2idx[w] for w in sent])
                 label_tensor = torch.tensor([self.configs.tag2idx[t] for t in label])
-                mask_tensor = torch.tensor([1]*len_data + [0]*(self.configs.padding_size - len_data))
+                mask_tensor = torch.tensor([1]*len_data + [0]*(self.configs.padding_size - len_data)).bool()
                 tensor_contents.append((sent_tensor, label_tensor, mask_tensor))
 
 
@@ -54,7 +54,7 @@ class NER_Dataset(Dataset):
                 # 转tensor，加个mask(CRF所需)
                 sent_tensor = torch.tensor([self.configs.word2idx[w] for w in sent])
                 label_tensor = torch.tensor([self.configs.tag2idx[t] for t in label])
-                mask_tensor = torch.tensor([1] * self.configs.padding_size)
+                mask_tensor = torch.tensor([1] * self.configs.padding_size).bool()
                 tensor_contents.append((sent_tensor, label_tensor, mask_tensor))
 
         return contents, tensor_contents

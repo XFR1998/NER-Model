@@ -36,10 +36,18 @@ class Configs(object):
         START_TAG = "<START>"
         STOP_TAG = "<STOP>"
         # 标签：idx
-        self.tag2idx = {"O": 0, "B-BANK": 1, "I-BANK": 2, "B-PRODUCT": 3, 'I-PRODUCT': 4,
-                   'B-COMMENTS_N': 5, 'I-COMMENTS_N': 6, 'B-COMMENTS_ADJ': 7,
-                   'I-COMMENTS_ADJ': 8, START_TAG: 9, STOP_TAG: 10}
-
+        self.tag2idx = {"O": 0,
+                        "B-BANK": 1, "I-BANK": 2,
+                        "B-PRODUCT": 3, 'I-PRODUCT': 4,
+                        'B-COMMENTS_N': 5, 'I-COMMENTS_N': 6,
+                        'B-COMMENTS_ADJ': 7, 'I-COMMENTS_ADJ': 8,
+                        START_TAG: 9, STOP_TAG: 10}
+        self.idx2tag = {0: "O",
+                        1: "B-BANK", 2: "I-BANK",
+                        3: "B-PRODUCT", 4: 'I-PRODUCT',
+                        5: 'B-COMMENTS_N', 6: 'I-COMMENTS_N',
+                        7: 'B-COMMENTS_ADJ', 8: 'I-COMMENTS_ADJ',
+                        9: START_TAG, 10: STOP_TAG}
 
         self.num_class = len(self.tag2idx)
         self.word2idx = None
