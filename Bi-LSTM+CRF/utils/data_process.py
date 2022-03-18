@@ -1,5 +1,5 @@
 import torch
-from torch.utils.data import Dataset, DataLoader, TensorDataset
+from torch.utils.data import Dataset, DataLoader
 
 class NER_Dataset(Dataset):
     def __init__(self, data=None, configs=None):
