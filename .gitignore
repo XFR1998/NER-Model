@@ -1,0 +1,4 @@
+pretrain_models
+*.pth
+*.bin
+
